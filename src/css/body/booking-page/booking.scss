@@ -1,0 +1,159 @@
+@use '../../global.scss' as *;
+
+.booking {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+    
+
+  // Title container styles
+  &-title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    .booking-title {
+      @include font-general-sans(600);
+      font-size: 62px;
+      color: $dark-blue-design;
+    }
+
+    .booking-subtitle {
+      @include font-general-sans();
+      font-size: 18px;
+      color: $body-text;
+    }
+  }
+
+  // Actions section (info cards and form)
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    .booking-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .location {
+        img {
+          max-width: 100%;
+          border-radius: $border-radius;
+          border: 2px solid $sky-blue-design;
+        }
+      }
+
+      .booking-info-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    .form-book {
+      flex: 1;
+      background-color: $white-color;
+      padding: 20px;
+      border-radius: $border-radius;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Office timing info cards
+  .office-timing {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: $white-color;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    .icon-container {
+      background-color: $mid-blue-design;
+      height: 53px;
+      width: 53px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        color: $white-color;
+        width: 26.5px;
+        height: 26.5px;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      &-title {
+        @include font-general-sans(600);
+        font-size: 16px;
+        color: $dark-blue-design;
+      }
+
+      &-subtitle {
+        @include font-general-sans();
+        font-size: 14px;
+        color: $body-text;
+      }
+    }
+  }
+  .form-book{
+    padding: 41px 47px 35px 47px;
+    border: 1px solid $sky-blue-design;
+    border-radius:$border-radius;
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .input-row{
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .input-container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            //Label styling------------
+            label{
+                font-size: 18px;
+                @include font-general-sans(600);
+                color: $body-text;
+            }
+            //Custom container--------------
+           .custom-textfield{
+            font-size: 14px;
+            border: 1px solid #D0D5DD;
+            border-radius: $border-radius;
+            color: #667085;
+            width: 100%;
+            }
+        }
+        .submit-booking{
+            @include button(#1376f8);
+            @include font-general-sans(600);
+            text-transform: lowercase;  
+            cursor: pointer;
+        }
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 1024px){
+    .booking-actions{
+        flex-direction: column-reverse
+    }
+}

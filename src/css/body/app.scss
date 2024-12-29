@@ -1,0 +1,20 @@
+@import '../global.scss';
+//Main container 
+.container-fluid{
+  margin-top:40px;
+  padding: 0px 80px 0px 80px;
+  @include archivo-style
+}
+@media screen and (max-width: 1024px)  {
+  .container-fluid{
+    margin-top:35px;
+    padding: 0px 60px 0px 60px;
+  }
+}
+
+@media screen and (max-width: 768px)  {
+  .container-fluid{
+    margin-top:20px;
+    padding: 0px 20px 0px 20px;
+  }
+}

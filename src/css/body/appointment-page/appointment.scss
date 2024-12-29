@@ -1,0 +1,33 @@
+@use '../../global.scss' as *;
+
+.appointment{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    .title{
+        font-size: 62px;
+        color:$dark-blue-design;
+    }
+    .appointment-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        flex-wrap: wrap;
+        .appointment-element{
+            padding: 30px;
+            border: 2px solid $sky-blue-design;
+            border-radius: $border-radius;
+            .appointment-details{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+    }
+}

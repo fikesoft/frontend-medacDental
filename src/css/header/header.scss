@@ -1,0 +1,131 @@
+@import '../global.scss';
+$height:90px;
+header{
+    background-color: $light-blue-design;
+    margin: 0  auto;
+    border-radius: $border-radius;
+    height: $height;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    .nav-bar{
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        z-index: 10000;
+        .logo-img{
+            height: $height;
+            cursor: pointer;
+        }
+        .burgher-menu{
+            @include button($vertical-padding: 13px, $horizontal-padding: 13px);
+            display: none;
+        }
+        .slide-menu{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            
+        }
+        .nav-bar-menu{
+           display: flex;
+           gap: 50px;
+           li{
+            list-style: none ;
+            cursor: pointer;
+           } 
+        
+        }
+
+        .button-book-now{
+            @include button;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 1024px)  {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .nav-bar{
+            display: flex;
+            gap: 20px;
+            align-items:center;
+            .logo-img{
+                height: 75px;
+            }
+            .nav-bar-menu{
+                gap: 30px;
+            }
+            .button-book-now{
+                @include button($vertical-padding: 10px, $horizontal-padding: 20px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    header {
+       
+        .nav-bar{
+            gap: 10px;
+            .logo-img{
+                height: 50px;
+            }
+            .nav-bar-menu{
+                gap: 10px;
+            }
+            .button-book-now{
+                @include button($vertical-padding: 5px, $horizontal-padding: 10px);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 545px)  {
+    header {
+       
+        .nav-bar{
+           gap: 100px;
+           .burgher-menu {
+            display: block;
+            cursor: pointer;
+            position: relative; 
+        }
+        
+        .slide-menu {
+            position: absolute;
+            background-color: $light-blue-design;
+            padding: 15px 20px;
+            gap: 30px;
+            border-radius: $border-radius;
+            top: 100px; 
+            right: 100px;
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            opacity: 0;
+            visibility: hidden; 
+            
+            &.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0); 
+                display: flex;
+                flex-direction: column-reverse; 
+                z-index: 20;
+                
+                .nav-bar-menu {
+                    flex-direction: column;
+                }
+            }
+        }
+        
+    }   
+}
+
+}

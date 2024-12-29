@@ -1,0 +1,42 @@
+/* Reset some default styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* Remove default margins */
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure images do not exceed their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Basic reset for form elements */
+button,
+input,
+select,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

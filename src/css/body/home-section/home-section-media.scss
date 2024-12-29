@@ -1,0 +1,103 @@
+@use '../../global.scss' as *;
+@media screen and (max-width:1440px) {
+    .home-drawing{
+        display: none;
+    }
+    .home-title {
+        font-size: 54px;
+    }
+}
+@media screen and (max-width: 1024px)  {
+    .home{
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-drawing{
+        display: block;
+    }
+  }
+
+  @media screen and (max-width: 680px) {
+    .home-drawing{
+        display: none;
+    }
+    .home-hero-heading {
+      margin-top: 30px !important; 
+      justify-content: center !important;
+    }
+  
+    .rotatingBorder {
+      width: 300px !important;
+      height: 300px !important;
+    }
+  
+    .firstBiggerCircle {
+      width: 280px !important;
+      height: 280px !important;
+      border: 5px dashed white !important;
+  
+      &::before {
+        margin: -6px !important;
+        border: 12px dashed white !important;
+      }
+    }
+  
+    .secondSmallCircle {
+      width: 230px !important;
+      height: 230px !important;
+  
+      circle {
+        stroke-width: 3 !important;
+        stroke-dasharray: 50, 30 !important;
+      }
+    }
+  
+    .centerImage {
+      width: 320px !important;
+    }
+  
+    .smallCircle {
+      width: 30px !important;
+      height: 30px !important;
+  
+      img {
+        width: 20px !important;
+      }
+    }
+  
+    // Rotate and position small circles
+    .smallCircle:nth-child(1) {
+      transform: rotate(30deg) translate(140px) rotate(-30deg) !important;
+    }
+  
+    .smallCircle:nth-child(2) {
+      transform: rotate(120deg) translate(140px) rotate(-120deg) !important;
+    }
+  
+    .smallCircle:nth-child(3) {
+      transform: rotate(210deg) translate(140px) rotate(-210deg) !important;
+    }
+    .home-title {
+        font-size: 42px !important;
+
+    }
+    .home-heading{
+        gap: 30px !important;
+    }
+    .home-button-book-appointment{
+        @include button($vertical-padding: 10px, $horizontal-padding: 20px !important) ;
+        font-size: 15px !important;
+        letter-spacing: normal;
+    }
+
+  
+  }
+
+  @media screen and (max-width: 375px){
+    .home-heading{
+        gap: 20px !important;
+    }
+    .home-heading-actions{
+        gap: 10px !important;
+    }
+  }

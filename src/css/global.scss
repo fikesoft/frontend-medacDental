@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap');
+//Variables 
+$light-blue-design:#e6f6fe;
+$sky-blue-design:#25b4f8;
+$mid-blue-design:#1376f8;
+$dark-blue-design:#011632;
+$body-text:#3c4959;
+$white-color:#ffffff;
+$border-radius:10px;
+
+//Styiling fonts-------------------------------
+@mixin archivo-style($weight: 400) {
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100; // Assuming "wdth" is the width axis
+  }
+
+  @mixin font-general-sans($font-weight: 400) {
+    font-family: 'General Sans', sans-serif;
+    font-weight: $font-weight;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+  }
+//Styling button------------------------------- 
+@mixin button($bg-color:#1376f8 , $vertical-padding:15px , $horizontal-padding:30px ){
+    border-radius: $border-radius;
+    color:$white-color;
+    padding: $vertical-padding $horizontal-padding ;
+    background-color: $bg-color;
+    @include archivo-style(600)
+}
+   
