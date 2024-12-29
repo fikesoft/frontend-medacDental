@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap');
+
+// Variables
+$light-blue-design: #e6f6fe;
+$sky-blue-design: #25b4f8;
+$mid-blue-design: #1376f8;
+$dark-blue-design: #011632;
+$body-text: #3c4959;
+$white-color: #ffffff;
+$border-radius: 10px;
+
+// Mixins
+@mixin archivo-style($weight: 400) {
+    font-family: "Archivo", sans-serif;
+    font-weight: $weight;
+}
+
+@mixin font-general-sans($weight: 400) {
+    font-family: "General Sans", sans-serif;
+    font-weight: $weight;
+}
+
+@mixin button($bg-color: #1376f8, $v-padding: 15px, $h-padding: 30px) {
+    border-radius: $border-radius;
+    color: $white-color;
+    padding: $v-padding $h-padding;
+    background-color: $bg-color;
+    @include archivo-style(600);
+}
+
+// Footer Styles
+.footer {
+    margin-top: 200px;
+    background-color: $dark-blue-design;
+    color: $white-color;
+    padding: 20px;
+    margin-left:-80px ;
+    margin-right: -80px;
+    position: relative; /* Allow stacking if needed */
+    .footer-section {
+        margin-bottom: 20px;
+
+        &.contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .booking-info {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                .icon {
+                    font-size: 24px;
+                    margin-right: 10px;
+                }
+
+                .info {
+                    h4 {
+                        @include archivo-style(600);
+                        margin: 0;
+                    }
+                    p {
+                        @include archivo-style(400);
+                        margin: 0;
+                        color: $light-blue-design;
+                    }
+                }
+            }
+        }
+
+        &.nav-links {
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    cursor: pointer;
+                    margin-bottom: 10px;
+                    color: $light-blue-design;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &.copyright {
+            text-align: center;
+            @include font-general-sans(400);
+        }
+    }
+}
